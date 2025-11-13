@@ -3412,6 +3412,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeSectionIndex = null;
   let currentHighlightIndex = 0;
   let answerVisible = false;
+  let suppressListSync = false;
 
   const renderSummaryCards = () => {
     sections.forEach((section, index) => {
@@ -3429,14 +3430,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  const highlightListItem = (index) => {
+    if (!questionList) return;
+    suppressListSync = true;
+    const detailItems = Array.from(questionList.querySelectorAll("details"));
+    detailItems.forEach((detailsEl, idx) => {
+      detailsEl.open = idx === index;
+      if (idx === index) {
+        detailsEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }
+    });
+    suppressListSync = false;
+  };
+
   const renderQuestionList = (section) => {
     questionList.innerHTML = "";
     section.questions.forEach((item, index) => {
       const details = document.createElement("details");
       details.className = "question-item";
-      if (index === 0) {
-        details.open = true;
-      }
+      details.dataset.index = index;
+      details.open = index === currentHighlightIndex;
 
       const summary = document.createElement("summary");
       summary.innerHTML = `<span class="question-index">${index + 1}.</span> ${formatText(item.question)}`;
@@ -3445,6 +3458,14 @@ document.addEventListener("DOMContentLoaded", () => {
       answer.innerHTML = formatText(item.answer);
 
       details.append(summary, answer);
+      details.addEventListener("toggle", () => {
+        if (suppressListSync) return;
+        if (details.open) {
+          currentHighlightIndex = index;
+          updateHighlightContent({ skipListSync: true });
+        }
+      });
+
       questionList.appendChild(details);
     });
     questionCountMeta.textContent = `${section.questions.length} total questions`;
@@ -3457,7 +3478,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nextQuestionBtn.disabled = total <= 1 || currentHighlightIndex >= total - 1;
   };
 
-  const updateHighlightContent = () => {
+  const updateHighlightContent = (options = {}) => {
     if (activeSectionIndex === null) return;
     const section = sections[activeSectionIndex];
     const item = section.questions[currentHighlightIndex] || { question: "Content coming soon.", answer: "" };
@@ -3475,6 +3496,9 @@ document.addEventListener("DOMContentLoaded", () => {
     revealAnswerBtn.textContent = "Reveal Answer";
 
     updateHighlightNavigation(section);
+    if (!options.skipListSync) {
+      highlightListItem(currentHighlightIndex);
+    }
   };
 
   const selectSection = (index, card) => {
@@ -3486,8 +3510,8 @@ document.addEventListener("DOMContentLoaded", () => {
     activeSectionIndex = index;
     currentHighlightIndex = 0;
     const section = sections[index];
-    updateHighlightContent();
     renderQuestionList(section);
+    updateHighlightContent();
   };
 
   revealAnswerBtn.addEventListener("click", () => {
