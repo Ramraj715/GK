@@ -3407,6 +3407,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionCountMeta = document.getElementById("questionCountMeta");
   const prevQuestionBtn = document.getElementById("prevQuestionBtn");
   const nextQuestionBtn = document.getElementById("nextQuestionBtn");
+  const dashboardView = document.getElementById("dashboardView");
+  const studyView = document.getElementById("studyView");
+  const dashboardList = document.getElementById("dashboardList");
+  const backToDashboardBtn = document.getElementById("backToDashboardBtn");
+  const questionListWrapper = document.getElementById("questionListWrapper");
+  const toggleQuestionListBtn = document.getElementById("toggleQuestionListBtn");
+  const questionListPlaceholder = document.getElementById("questionListPlaceholder");
 
   let activeCard = null;
   let activeSectionIndex = null;
@@ -3414,7 +3421,51 @@ document.addEventListener("DOMContentLoaded", () => {
   let answerVisible = false;
   let suppressListSync = false;
 
+  const resetDetailPanel = () => {
+    detailTitle.textContent = "Select a Section";
+    detailMeta.textContent = "";
+    questionText.innerHTML = "Choose a section to view its first highlight question.";
+    answerText.innerHTML = "";
+    answerText.classList.remove("visible");
+    answerText.setAttribute("aria-hidden", "true");
+    answerVisible = false;
+    revealAnswerBtn.disabled = true;
+    revealAnswerBtn.textContent = "Reveal Answer";
+    prevQuestionBtn.disabled = true;
+    nextQuestionBtn.disabled = true;
+    questionList.innerHTML = "";
+    questionCountMeta.textContent = "";
+    toggleQuestionListBtn.hidden = true;
+    toggleQuestionListBtn.textContent = "Show Complete Set";
+    questionListWrapper.classList.add("hidden");
+    questionListWrapper.setAttribute("aria-hidden", "true");
+    questionListPlaceholder.classList.remove("hidden");
+    questionListPlaceholder.setAttribute("aria-hidden", "false");
+  };
+
+  const showDashboard = () => {
+    studyView.classList.add("hidden");
+    dashboardView.classList.remove("hidden");
+    backToDashboardBtn.hidden = true;
+    if (activeCard) {
+      activeCard.classList.remove("active");
+    }
+    activeCard = null;
+    activeSectionIndex = null;
+    currentHighlightIndex = 0;
+    resetDetailPanel();
+  };
+
+  const showStudyView = () => {
+    dashboardView.classList.add("hidden");
+    studyView.classList.remove("hidden");
+    backToDashboardBtn.hidden = false;
+  };
+
   const renderSummaryCards = () => {
+    summaryList.innerHTML = "";
+    dashboardList.innerHTML = "";
+
     sections.forEach((section, index) => {
       const button = document.createElement("button");
       button.type = "button";
@@ -3427,6 +3478,16 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       button.addEventListener("click", () => selectSection(index, button));
       summaryList.appendChild(button);
+
+      const dashboardCard = document.createElement("button");
+      dashboardCard.type = "button";
+      dashboardCard.className = "dashboard-card";
+      dashboardCard.innerHTML = `
+        <h3>${section.id}. ${section.title}</h3>
+        <p>${section.questionCount} questions · Focus: ${section.focus}</p>
+      `;
+      dashboardCard.addEventListener("click", () => selectSection(index, button));
+      dashboardList.appendChild(dashboardCard);
     });
   };
 
@@ -3470,6 +3531,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     questionCountMeta.textContent = `${section.questions.length} total questions`;
     questionList.scrollTop = 0;
+    const hasQuestions = section.questions.length > 0;
+    toggleQuestionListBtn.hidden = !hasQuestions;
+    toggleQuestionListBtn.textContent = "Show Complete Set";
+    questionListWrapper.classList.add("hidden");
+    questionListWrapper.setAttribute("aria-hidden", "true");
+    questionListPlaceholder.classList.toggle("hidden", !hasQuestions);
+    questionListPlaceholder.setAttribute("aria-hidden", (!hasQuestions).toString());
   };
 
   const updateHighlightNavigation = (section) => {
@@ -3499,9 +3567,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!options.skipListSync) {
       highlightListItem(currentHighlightIndex);
     }
+    if (questionListWrapper.classList.contains("hidden")) {
+      questionListPlaceholder.classList.remove("hidden");
+      questionListPlaceholder.setAttribute("aria-hidden", "false");
+      toggleQuestionListBtn.textContent = "Show Complete Set";
+    }
   };
 
   const selectSection = (index, card) => {
+    showStudyView();
+
     if (activeCard) {
       activeCard.classList.remove("active");
     }
@@ -3536,9 +3611,26 @@ document.addEventListener("DOMContentLoaded", () => {
     updateHighlightContent();
   });
 
-  renderSummaryCards();
+  backToDashboardBtn.addEventListener("click", showDashboard);
 
-  if (summaryList.firstElementChild) {
-    summaryList.firstElementChild.click();
-  }
+  toggleQuestionListBtn.addEventListener("click", () => {
+    const isHidden = questionListWrapper.classList.contains("hidden");
+    if (isHidden) {
+      questionListWrapper.classList.remove("hidden");
+      questionListWrapper.setAttribute("aria-hidden", "false");
+      toggleQuestionListBtn.textContent = "Hide Complete Set";
+      highlightListItem(currentHighlightIndex);
+      questionListPlaceholder.classList.add("hidden");
+      questionListPlaceholder.setAttribute("aria-hidden", "true");
+    } else {
+      questionListWrapper.classList.add("hidden");
+      questionListWrapper.setAttribute("aria-hidden", "true");
+      toggleQuestionListBtn.textContent = "Show Complete Set";
+      questionListPlaceholder.classList.remove("hidden");
+      questionListPlaceholder.setAttribute("aria-hidden", "false");
+    }
+  });
+
+  renderSummaryCards();
+  showDashboard();
 });
