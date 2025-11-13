@@ -3405,8 +3405,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealAnswerBtn = document.getElementById("revealAnswerBtn");
   const questionList = document.getElementById("questionList");
   const questionCountMeta = document.getElementById("questionCountMeta");
+  const prevQuestionBtn = document.getElementById("prevQuestionBtn");
+  const nextQuestionBtn = document.getElementById("nextQuestionBtn");
 
   let activeCard = null;
+  let activeSectionIndex = null;
+  let currentHighlightIndex = 0;
   let answerVisible = false;
 
   const renderSummaryCards = () => {
@@ -3447,27 +3451,42 @@ document.addEventListener("DOMContentLoaded", () => {
     questionList.scrollTop = 0;
   };
 
-  const selectSection = (index, card) => {
-    const section = sections[index];
+  const updateHighlightNavigation = (section) => {
+    const total = section.questions.length;
+    prevQuestionBtn.disabled = total <= 1 || currentHighlightIndex <= 0;
+    nextQuestionBtn.disabled = total <= 1 || currentHighlightIndex >= total - 1;
+  };
 
+  const updateHighlightContent = () => {
+    if (activeSectionIndex === null) return;
+    const section = sections[activeSectionIndex];
+    const item = section.questions[currentHighlightIndex] || { question: "Content coming soon.", answer: "" };
+
+    detailTitle.textContent = `${section.id}. ${section.title}`;
+    detailMeta.textContent = `${section.questionCount} questions · Focus: ${section.focus}`;
+    questionText.innerHTML = formatText(item.question);
+
+    answerText.innerHTML = formatText(item.answer);
+    answerText.classList.remove("visible");
+    answerText.setAttribute("aria-hidden", "true");
+
+    answerVisible = false;
+    revealAnswerBtn.disabled = !item.answer;
+    revealAnswerBtn.textContent = "Reveal Answer";
+
+    updateHighlightNavigation(section);
+  };
+
+  const selectSection = (index, card) => {
     if (activeCard) {
       activeCard.classList.remove("active");
     }
     activeCard = card;
     activeCard.classList.add("active");
-
-    detailTitle.textContent = `${section.id}. ${section.title}`;
-    detailMeta.textContent = `${section.questionCount} questions · Focus: ${section.focus}`;
-    questionText.innerHTML = formatText(section.highlightQuestion);
-
-    answerText.innerHTML = formatText(section.highlightAnswer);
-    answerText.classList.remove("visible");
-    answerText.setAttribute("aria-hidden", "true");
-
-    answerVisible = false;
-    revealAnswerBtn.disabled = !section.highlightAnswer;
-    revealAnswerBtn.textContent = "Reveal Answer";
-
+    activeSectionIndex = index;
+    currentHighlightIndex = 0;
+    const section = sections[index];
+    updateHighlightContent();
     renderQuestionList(section);
   };
 
@@ -3477,6 +3496,20 @@ document.addEventListener("DOMContentLoaded", () => {
     answerText.classList.toggle("visible", answerVisible);
     answerText.setAttribute("aria-hidden", (!answerVisible).toString());
     revealAnswerBtn.textContent = answerVisible ? "Hide Answer" : "Reveal Answer";
+  });
+
+  prevQuestionBtn.addEventListener("click", () => {
+    if (activeSectionIndex === null || currentHighlightIndex === 0) return;
+    currentHighlightIndex -= 1;
+    updateHighlightContent();
+  });
+
+  nextQuestionBtn.addEventListener("click", () => {
+    if (activeSectionIndex === null) return;
+    const section = sections[activeSectionIndex];
+    if (currentHighlightIndex >= section.questions.length - 1) return;
+    currentHighlightIndex += 1;
+    updateHighlightContent();
   });
 
   renderSummaryCards();
