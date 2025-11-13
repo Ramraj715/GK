@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GK Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>GK Explorer</h1>
+      <p>Kick-start your preparation with curated highlights from every section.</p>
+    </header>
+
+    <main class="app-main">
+      <aside class="summary-panel" aria-label="Section summary">
+        <h2>Summary of Sections</h2>
+        <div id="summaryList" class="summary-list" role="list"></div>
+      </aside>
+
+      <section class="detail-panel" aria-live="polite">
+        <div class="detail-header">
+          <h2 id="detailTitle">Select a Section</h2>
+          <p id="detailMeta" class="detail-meta"></p>
+        </div>
+        <div class="detail-content">
+          <h3>Highlight Question</h3>
+          <div id="questionCard" class="question-card">
+            <p class="question-text" id="questionText">
+              Choose a section to view its first highlight question.
+            </p>
+            <button id="revealAnswerBtn" class="reveal-btn" disabled>Reveal Answer</button>
+            <p class="answer-text" id="answerText" aria-hidden="true"></p>
+          </div>
+
+          <div class="question-list-wrapper">
+            <div class="list-header">
+              <h3>Complete Question Set</h3>
+              <p id="questionCountMeta" class="detail-meta"></p>
+            </div>
+            <div id="questionList" class="question-list" role="list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Crafted for rapid revision across Nepal-focused and global GK domains.</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
