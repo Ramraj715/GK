@@ -720,6 +720,10 @@ body {
   background: linear-gradient(135deg, rgba(217, 70, 239, 1), rgba(236, 72, 153, 0.98));
 }
 
+.dashboard-list .dashboard-card:nth-child(13) {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 1), rgba(167, 139, 250, 0.98));
+}
+
 .summary-panel {
   display: none;
 }
@@ -774,6 +778,10 @@ body {
 
 .summary-panel .summary-card:nth-child(12) {
   background: linear-gradient(135deg, rgba(251, 191, 217, 1), rgba(244, 114, 182, 0.96));
+}
+
+.summary-panel .summary-card:nth-child(13) {
+  background: linear-gradient(135deg, rgba(221, 214, 254, 1), rgba(196, 181, 253, 0.96));
 }
 
 
