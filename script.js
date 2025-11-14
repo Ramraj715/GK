@@ -52,7 +52,7 @@ const rawSections = [
 
 ४. नेपालको भौगोलिक स्थिति कुन अक्षांश र देशान्तरबीच पर्छ?
 
-👉 २६°२२’ उत्तरदेखि ३०°२७’ उत्तर अक्षांश र ८०°०४’ पूर्वदेखि ८८°१२’ पूर्व देशान्तरबीच
+👉 २६°२२' उत्तरदेखि ३०°२७' उत्तर अक्षांश र ८०°०४' पूर्वदेखि ८८°१२' पूर्व देशान्तरबीच
 
 ५. नेपालको सिमाना कति देशसँग मिल्छ?
 
@@ -230,11 +230,11 @@ const rawSections = [
 
 👉 गौचर विमानस्थल (हाल त्रिभुवन अन्तर्राष्ट्रिय विमानस्थल)
 
-४९. नेपालको कुन जिल्ला “सयौ जलप्रपातको जिल्ला” भनेर चिनिन्छ?
+४९. नेपालको कुन जिल्ला "सयौ जलप्रपातको जिल्ला" भनेर चिनिन्छ?
 
 👉 स्याङ्जा
 
-५०. नेपालको कुन जिल्ला “सहरभन्दा पहिला बस्ती बसाइएको जिल्ला” मानिन्छ?
+५०. नेपालको कुन जिल्ला "सहरभन्दा पहिला बस्ती बसाइएको जिल्ला" मानिन्छ?
 
 👉 भक्तपुर
 `)
@@ -750,7 +750,7 @@ const rawSections = [
 
 👉 बिराटनगर जुट मिल
 
-२४. नेपालमा “उद्योग वर्ष” कहिले मनाइएको थियो?
+२४. नेपालमा "उद्योग वर्ष" कहिले मनाइएको थियो?
 
 👉 २०३८ सालमा
 
@@ -838,7 +838,7 @@ const rawSections = [
 
 👉 विभिन्न मन्त्रालय र प्रदेश–स्थानीय तहमार्फत
 
-४६. नेपालमा “नेपाल पुनर्निर्माण प्राधिकरण” को मुख्य उद्देश्य के थियो?
+४६. नेपालमा "नेपाल पुनर्निर्माण प्राधिकरण" को मुख्य उद्देश्य के थियो?
 
 👉 भूकम्प प्रभावित संरचना पुनर्निर्माण गर्नु
 
@@ -868,7 +868,7 @@ const rawSections = [
 
 👉 ज्ञान (Knowledge)
 
-२. ‘विज्ञानका पिता’ भनेर कसलाई चिनिन्छ?
+२. 'विज्ञानका पिता' भनेर कसलाई चिनिन्छ?
 
 👉 ग्यालिलियो ग्यालिली (Galileo Galilei)
 
@@ -1040,7 +1040,7 @@ const rawSections = [
 
 👉 अल्बर्ट आइन्स्टाइन
 
-४५. ‘E = mc²’ को अर्थ के हो?
+४५. 'E = mc²' को अर्थ के हो?
 
 👉 ऊर्जा बराबर द्रव्यमान गुणा प्रकाशको गति वर्ग
 
@@ -1246,7 +1246,7 @@ const rawSections = [
 
 👉 IPv4 र IPv6
 
-४५. URL मा “www” को अर्थ के हो?
+४५. URL मा "www" को अर्थ के हो?
 
 👉 World Wide Web
 
@@ -1334,7 +1334,7 @@ const rawSections = [
 
 १५. UNICEF को पूर्ण रूप के हो?
 
-👉 United Nations International Children’s Emergency Fund
+👉 United Nations International Children's Emergency Fund
 
 १६. FAO को पूर्ण रूप के हो?
 
@@ -1344,7 +1344,7 @@ const rawSections = [
 
 👉 United Nations Development Programme
 
-१८. अन्तर्राष्ट्रिय ऐतिहासिक सम्झौता “पेरिस सम्झौता” के सम्बन्धमा छ?
+१८. अन्तर्राष्ट्रिय ऐतिहासिक सम्झौता "पेरिस सम्झौता" के सम्बन्धमा छ?
 
 👉 जलवायु परिवर्तन र हरितगृह ग्यास कटौती
 
@@ -1364,7 +1364,7 @@ const rawSections = [
 
 👉 १० डिसेम्बर
 
-२३. “सस्टेनेबल डेभलपमेन्ट गोल्स (SDGs)” को अवधारणा कुन वर्षमा शुरू भयो?
+२३. "सस्टेनेबल डेभलपमेन्ट गोल्स (SDGs)" को अवधारणा कुन वर्षमा शुरू भयो?
 
 👉 २०१५
 
@@ -1668,13 +1668,13 @@ Choose the correct form: She ___ to the market yesterday.
 
 Choose the correct sentence:
 
-a) He don’t like apples.
+a) He don't like apples.
 
-b) He doesn’t like apples.
+b) He doesn't like apples.
 
 c) He not likes apples.
 
-👉 b) He doesn’t like apples.
+👉 b) He doesn't like apples.
 
 Fill in the blank: I have been living here ___ 2010.
 
@@ -1694,9 +1694,9 @@ c) I agreeing with you.
 
 👉 b) I agree with you.
 
-Correct the sentence: She don’t know the answer.
+Correct the sentence: She don't know the answer.
 
-👉 She doesn’t know the answer.
+👉 She doesn't know the answer.
 
 Fill in the blank: He is taller ___ his brother.
 
@@ -1716,43 +1716,43 @@ Choose the correct article: I saw ___ eagle in the sky.
 
 Vocabulary — Synonyms & Antonyms
 
-Synonym of “Happy”?
+Synonym of "Happy"?
 
 👉 Joyful
 
-Antonym of “Difficult”?
+Antonym of "Difficult"?
 
 👉 Easy
 
-Synonym of “Quick”?
+Synonym of "Quick"?
 
 👉 Fast
 
-Antonym of “Generous”?
+Antonym of "Generous"?
 
 👉 Selfish
 
-Synonym of “Intelligent”?
+Synonym of "Intelligent"?
 
 👉 Clever
 
-Antonym of “Success”?
+Antonym of "Success"?
 
 👉 Failure
 
-Synonym of “Beautiful”?
+Synonym of "Beautiful"?
 
 👉 Attractive
 
-Antonym of “Ancient”?
+Antonym of "Ancient"?
 
 👉 Modern
 
-Synonym of “Brave”?
+Synonym of "Brave"?
 
 👉 Courageous
 
-Antonym of “Victory”?
+Antonym of "Victory"?
 
 👉 Defeat
 
@@ -1760,11 +1760,11 @@ Reading Comprehension
 
 Read the passage and answer the questions:
 
-“Global warming is the long-term heating of Earth’s climate system due to human activities. It affects weather patterns, sea levels, and ecosystems worldwide.”
+"Global warming is the long-term heating of Earth's climate system due to human activities. It affects weather patterns, sea levels, and ecosystems worldwide."
 
 What is global warming?
 
-👉 Long-term heating of Earth’s climate system
+👉 Long-term heating of Earth's climate system
 
 What causes global warming?
 
@@ -1774,7 +1774,7 @@ Name one effect of global warming.
 
 👉 Rising sea levels / Change in weather patterns
 
-Which word means “living systems in nature”?
+Which word means "living systems in nature"?
 
 👉 Ecosystems
 
@@ -1788,9 +1788,9 @@ She go to school every day.
 
 👉 go → goes
 
-He don’t like swimming.
+He don't like swimming.
 
-👉 don’t → doesn’t
+👉 don't → doesn't
 
 I has finished my homework.
 
@@ -1872,65 +1872,65 @@ Past Perfect: He ___ (finish) work before 5 pm.
 
 Idioms & Phrases
 
-“Break the ice” means?
+"Break the ice" means?
 
 👉 To make people comfortable
 
-“Hit the nail on the head” means?
+"Hit the nail on the head" means?
 
 👉 To describe exactly what is causing a situation
 
-“Piece of cake” means?
+"Piece of cake" means?
 
 👉 Very easy task
 
-“Once in a blue moon” means?
+"Once in a blue moon" means?
 
 👉 Very rarely
 
-“Bite the bullet” means?
+"Bite the bullet" means?
 
 👉 To face a difficult situation bravely
 
 Synonyms / Antonyms (continued)
 
-Synonym of “Sad”?
+Synonym of "Sad"?
 
 👉 Unhappy
 
-Antonym of “Night”?
+Antonym of "Night"?
 
 👉 Day
 
-Synonym of “Strong”?
+Synonym of "Strong"?
 
 👉 Powerful
 
-Antonym of “Short”?
+Antonym of "Short"?
 
 👉 Tall / Long
 
-Synonym of “Begin”?
+Synonym of "Begin"?
 
 👉 Start
 
-Antonym of “Old”?
+Antonym of "Old"?
 
 👉 New
 
-Synonym of “Rich”?
+Synonym of "Rich"?
 
 👉 Wealthy
 
-Antonym of “Light”?
+Antonym of "Light"?
 
 👉 Dark
 
-Synonym of “Angry”?
+Synonym of "Angry"?
 
 👉 Furious
 
-Antonym of “Fast”?
+Antonym of "Fast"?
 
 👉 Slow
 
@@ -1982,7 +1982,7 @@ If it rains tomorrow, ___
 
 👉 we will stay home
 
-She didn’t come because ___
+She didn't come because ___
 
 👉 she was sick
 
@@ -2266,7 +2266,7 @@ All rectangles are squares. True or False?
 
 👉 False
 
-If A is the brother of B, and B is the father of C, what is A’s relation to C?
+If A is the brother of B, and B is the father of C, what is A's relation to C?
 
 👉 Uncle
 
@@ -2410,7 +2410,7 @@ Two fathers and two sons went fishing. Each caught one fish. How many fish caugh
 
 👉 3
 
-Mary’s mother has four children. Three are April, May, June. Who is the fourth?
+Mary's mother has four children. Three are April, May, June. Who is the fourth?
 
 👉 Mary
 
@@ -3409,6 +3409,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextQuestionBtn = document.getElementById("nextQuestionBtn");
   const dashboardView = document.getElementById("dashboardView");
   const studyView = document.getElementById("studyView");
+  const dashboardShell = document.getElementById("dashboardShell");
+  const dashboardHero = document.getElementById("dashboardHero");
   const dashboardList = document.getElementById("dashboardList");
   const backToDashboardBtn = document.getElementById("backToDashboardBtn");
   const questionListWrapper = document.getElementById("questionListWrapper");
@@ -3445,7 +3447,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const showDashboard = () => {
     studyView.classList.add("hidden");
-    dashboardView.classList.remove("hidden");
+    dashboardShell.classList.remove("hidden");
+    if (dashboardHero) {
+      dashboardHero.setAttribute("aria-hidden", "false");
+    }
     backToDashboardBtn.hidden = true;
     if (activeCard) {
       activeCard.classList.remove("active");
@@ -3457,9 +3462,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showStudyView = () => {
-    dashboardView.classList.add("hidden");
+    dashboardShell.classList.add("hidden");
     studyView.classList.remove("hidden");
     backToDashboardBtn.hidden = false;
+    if (dashboardHero) {
+      dashboardHero.setAttribute("aria-hidden", "true");
+    }
   };
 
   const renderSummaryCards = () => {

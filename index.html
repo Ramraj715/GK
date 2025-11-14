@@ -15,20 +15,29 @@
     </header>
 
     <main class="app-main">
-      <section id="dashboardView" class="dashboard-view" aria-label="Section dashboard">
-        <div class="dashboard-header">
-          <h2>Dashboard</h2>
-          <p>Select a set to start exploring its questions.</p>
-        </div>
-        <div id="dashboardList" class="dashboard-list" role="list"></div>
-      </section>
+      <div id="dashboardShell" class="dashboard-shell">
+        <section id="dashboardView" class="dashboard-view" aria-label="Section dashboard">
+          <div class="dashboard-header">
+            <h2>Dashboard</h2>
+            <p>Select a set to start exploring its questions.</p>
+          </div>
+          <div id="dashboardList" class="dashboard-list" role="list"></div>
+        </section>
+
+        <section id="dashboardHero" class="dashboard-hero" aria-hidden="true">
+          <div class="hero-content">
+            <span class="hero-tag">Curated Knowledge Hub</span>
+            <h2 class="hero-title">All in One GK By Mr. Ramraj Rajbanshi</h2>
+            <p class="hero-text">Stay exam-ready with spotlight questions, rapid reveals, and a playful journey through Nepal and beyond.</p>
+          </div>
+          <div class="hero-visual"></div>
+        </section>
+      </div>
 
       <section id="studyView" class="study-view hidden">
-        <aside class="summary-panel" aria-label="Section summary">
-          <h2>Summary of Sections</h2>
+        <div class="summary-panel sr-only" aria-hidden="true">
           <div id="summaryList" class="summary-list" role="list"></div>
-        </aside>
-
+        </div>
         <section class="detail-panel" aria-live="polite">
           <div class="detail-header">
             <h2 id="detailTitle">Select a Section</h2>
@@ -59,14 +68,6 @@
             </button>
 
             <div id="questionListPlaceholder" class="question-list-placeholder">
-              <div class="illustration" aria-hidden="true">
-                <img
-                  src="assets/earth.jpg"
-                  alt="View of the Earth from space"
-                  class="illustration-image"
-                  loading="lazy"
-                />
-              </div>
               <p>Catch your breath! Reveal the full question set when you’re ready to deep dive.</p>
             </div>
 
@@ -84,7 +85,6 @@
 
     <footer class="app-footer">
       <div class="creator-wrapper">
-        <img src="assets/creator.png" alt="Portrait of Mr. Ramraj Rajbanshi" class="creator-photo" />
         <small>Created and Designed By Mr. Ramraj Rajbanshi — <a href="mailto:rajbanshiraaj3@gmail.com">rajbanshiraaj3@gmail.com</a></small>
       </div>
     </footer>
